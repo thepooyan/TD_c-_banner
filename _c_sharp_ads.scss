@@ -1,0 +1,119 @@
+#c_sharp_ads {
+    --purple1: #6411BC;
+    --purple2: #A047FF;
+    --scale: 1px;
+    background: linear-gradient(to left, var(--purple1), var(--purple2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: calc(1.5 * var(--scale));
+    overflow: hidden;
+
+    --move-1: 2s;
+    --move-2: 1s;
+    --move-3: 1s;
+    --move-4: 1s;
+    --move-5: 1s;
+    --move-6: 1s;
+
+    .images {
+        position: relative;
+        display: flex;
+        align-items: center;
+        // move 1
+        animation:
+            go-left var(--move-1) forwards,
+            // move 5
+            go-left-2 var(--move-5) calc(var(--move-1) + var(--move-2) + var(--move-3) + var(--move-4)) forwards,
+        ;
+    }
+    .key {
+        position: absolute;
+        z-index: 4;
+        left: calc(64 * var(--scale));
+        top: calc(41 * var(--scale));
+        width: 0;
+        height: calc(28 * var(--scale));
+        object-position: left;
+        object-fit: cover;
+        // move 2
+        animation: grow var(--move-2) var(--move-1) forwards;
+    }
+    .text2 {
+        opacity: 0;
+        position: absolute;
+        color: white;
+        font-weight: 900;
+        font-size: calc(31 * var(--scale));
+        //move 6
+        animation: appear-2 var(--move-6) calc(var(--move-1) + var(--move-2) + var(--move-3) + var(--move-4) + var(--move-5)) forwards;
+    }
+    .table {
+        width: calc(96 * var(--scale));
+        position: relative;
+        z-index: 5;
+    }
+    .text1 {
+        color: white;
+        font-size: calc(20 * var(--scale));
+        font-weight: 900;
+        opacity: 0;
+        position: relative;
+        //move 3
+        animation: appear1 var(--move-3) calc(var(--move-2) + var(--move-1)) forwards,
+        //move 4
+            dropdown var(--move-4) calc(var(--move-3) + var(--move-2) + var(--move-1)) forwards
+        ;
+    }
+    @keyframes appear1 {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+
+    }
+    @keyframes dropdown {
+        0% {
+            opacity: 1;
+            bottom: calc(0 * var(--scale));
+        }
+        100% {
+            opacity: 1;
+            bottom: calc(-85 * var(--scale));
+        }
+    }
+    @keyframes grow {
+        0% {
+            width: calc(0 * var(--scale));
+        }
+        100% {
+            width: calc(119 * var(--scale));
+        }
+    }    
+    @keyframes go-left {
+        0% {
+            right: 0%;
+        }
+        100% {
+            right: 11%;
+        }
+    }    
+    @keyframes go-left-2 {
+        0% {
+            right: 11%;
+        }
+        100% {
+            right: 30%;
+        }
+    }    
+    @keyframes appear-2 {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
