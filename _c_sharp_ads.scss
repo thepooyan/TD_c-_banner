@@ -30,7 +30,7 @@
     --until-5: calc(var(--delay-4) + var(--move-4) + var(--until-4));
 
     --delay-5: 0s;
-    --move-5: 1s;
+    --move-5: 2s;
 
     --until-6: calc(var(--delay-5) + var(--move-5) + var(--until-5));
 
@@ -43,9 +43,9 @@
         align-items: center;
         // move 1
         animation:
-            go-left var(--move-1) var(--delay-1) forwards,
+            go-left var(--move-1) var(--delay-1) cubic-bezier(0.68, -0.15, 0.32, 1.25) forwards,
             // move 5
-            go-left-2 var(--move-5) calc(var(--delay-5) + var(--until-5)) forwards,
+            go-left-2 var(--move-5) calc(var(--delay-5) + var(--until-5)) cubic-bezier(0.68, -0.15, 0.32, 1.25) forwards,
         ;
     }
     .key {
@@ -66,6 +66,7 @@
         color: white;
         font-weight: 900;
         font-size: calc(31 * var(--scale));
+        translate: calc(80 * var(--scale)) 0;
         //move 6
         animation: appear-2 var(--move-6) calc(var(--until-6) + var(--delay-6)) forwards;
     }
@@ -126,7 +127,7 @@
             right: calc(120 * var(--scale));
         }
         100% {
-            right: calc(300 * var(--scale));
+            right: calc(210 * var(--scale));
         }
     }    
     @keyframes appear-2 {
