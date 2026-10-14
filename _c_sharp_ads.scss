@@ -38,6 +38,11 @@
     --delay-6: 0s;
     --move-6: 1s;
 
+    --until-7: calc(var(--delay-6) + var(--move-6) + var(--until-6));
+
+    --delay-7: 0s;
+    --move-7: 1s;
+
     .images {
         position: relative;
         display: flex;
@@ -83,12 +88,12 @@
         opacity: 0;
         position: relative;
         //move 3
-        animation: appear1 var(--move-3) calc(var(--until-3) + var(--delay-3)) forwards,
+        animation: appear var(--move-3) calc(var(--until-3) + var(--delay-3)) forwards,
         //move 4
             dropdown var(--move-4) calc(var(--until-4) + var(--delay-4)) forwards
         ;
     }
-    @keyframes appear1 {
+    @keyframes appear {
         0% {
             opacity: 0;
         }
@@ -159,5 +164,19 @@
         rotate: -30deg;
         font-size: 87px;
         opacity: 0.3;
+    }
+    .banner {
+        background: #FFC64B;
+        color: #241831;
+        position: absolute;
+        top: 0;
+        padding: 0px 7px;
+        font-weight: 900;
+        font-size: 8px;
+        border-radius: 0 0 3px 3px;
+        translate: 279px 0;
+        opacity: 0;
+        // move 7
+        animation: appear var(--move-7) calc(var(--until-7) + var(--delay-7)) forwards;
     }
 }
