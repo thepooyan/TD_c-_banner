@@ -170,11 +170,11 @@
         color: #241831;
         position: absolute;
         top: 0;
-        padding: 0px 7px;
+        padding: 0px calc(7 * var(--scale));
         font-weight: 900;
-        font-size: 8px;
+        font-size: calc(8 * var(--scale));
         border-radius: 0 0 3px 3px;
-        translate: 279px 0;
+        translate: calc(279 * var(--scale)) 0;
         opacity: 0;
         // move 7
         animation: appear var(--move-7) calc(var(--until-7) + var(--delay-7)) forwards;
