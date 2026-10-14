@@ -24,7 +24,7 @@
 
     --until-4: calc(var(--delay-3) + var(--move-3) + var(--until-3));
 
-    --delay-4: 3s;
+    --delay-4: 1s;
     --move-4: 1s;
 
     --until-5: calc(var(--delay-4) + var(--move-4) + var(--until-4));
@@ -115,18 +115,18 @@
     }    
     @keyframes go-left {
         0% {
-            right: 0%;
+            right: calc(0 * var(--scale));
         }
         100% {
-            right: 11%;
+            right: calc(120 * var(--scale));
         }
     }    
     @keyframes go-left-2 {
         0% {
-            right: 11%;
+            right: calc(120 * var(--scale));
         }
         100% {
-            right: 30%;
+            right: calc(300 * var(--scale));
         }
     }    
     @keyframes appear-2 {
