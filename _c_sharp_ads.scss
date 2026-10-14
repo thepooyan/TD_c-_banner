@@ -9,11 +9,32 @@
     padding-block: calc(1.5 * var(--scale));
     overflow: hidden;
 
+    --delay-1: 1s;
     --move-1: 2s;
+
+    --until-2: calc(var(--delay-1) + var(--move-1));
+
+    --delay-2: 0s;
     --move-2: 1s;
+
+    --until-3: calc(var(--delay-2) + var(--move-2) + var(--until-2));
+
+    --delay-3: 0s;
     --move-3: 1s;
+
+    --until-4: calc(var(--delay-3) + var(--move-3) + var(--until-3));
+
+    --delay-4: 3s;
     --move-4: 1s;
+
+    --until-5: calc(var(--delay-4) + var(--move-4) + var(--until-4));
+
+    --delay-5: 0s;
     --move-5: 1s;
+
+    --until-6: calc(var(--delay-5) + var(--move-5) + var(--until-5));
+
+    --delay-6: 0s;
     --move-6: 1s;
 
     .images {
@@ -22,9 +43,9 @@
         align-items: center;
         // move 1
         animation:
-            go-left var(--move-1) forwards,
+            go-left var(--move-1) var(--delay-1) forwards,
             // move 5
-            go-left-2 var(--move-5) calc(var(--move-1) + var(--move-2) + var(--move-3) + var(--move-4)) forwards,
+            go-left-2 var(--move-5) calc(var(--delay-5) + var(--until-5)) forwards,
         ;
     }
     .key {
@@ -37,7 +58,7 @@
         object-position: left;
         object-fit: cover;
         // move 2
-        animation: grow var(--move-2) var(--move-1) forwards;
+        animation: grow var(--move-2) calc(var(--until-2) + var(--delay-2)) forwards;
     }
     .text2 {
         opacity: 0;
@@ -46,7 +67,7 @@
         font-weight: 900;
         font-size: calc(31 * var(--scale));
         //move 6
-        animation: appear-2 var(--move-6) calc(var(--move-1) + var(--move-2) + var(--move-3) + var(--move-4) + var(--move-5)) forwards;
+        animation: appear-2 var(--move-6) calc(var(--until-6) + var(--delay-6)) forwards;
     }
     .table {
         width: calc(96 * var(--scale));
@@ -60,9 +81,9 @@
         opacity: 0;
         position: relative;
         //move 3
-        animation: appear1 var(--move-3) calc(var(--move-2) + var(--move-1)) forwards,
+        animation: appear1 var(--move-3) calc(var(--until-3) + var(--delay-3)) forwards,
         //move 4
-            dropdown var(--move-4) calc(var(--move-3) + var(--move-2) + var(--move-1)) forwards
+            dropdown var(--move-4) calc(var(--until-4) + var(--delay-4)) forwards
         ;
     }
     @keyframes appear1 {
