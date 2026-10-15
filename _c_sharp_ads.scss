@@ -44,6 +44,8 @@
     --delay-7: 0s;
     --move-7: 1s;
 
+    --outer-left-bound: 210;
+
     &:hover {
         .table {
         animation: twinkle .6s;
@@ -161,7 +163,7 @@
             right: calc(120 * var(--scale));
         }
         100% {
-            right: calc(210 * var(--scale));
+            right: calc(var(--outer-left-bound) * var(--scale));
         }
     }    
     @keyframes appear-2 {
@@ -228,5 +230,6 @@
         .text2 {
             --scale: .5px;
         }
+        --outer-left-bound: 180;
     }
 }
