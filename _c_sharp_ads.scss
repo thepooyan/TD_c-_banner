@@ -1,3 +1,5 @@
+@use "./Content/source/Variables" as v;
+
 #c_sharp_ads {
     --purple1: #6411BC;
     --purple2: #A047FF;
@@ -216,5 +218,15 @@
         opacity: 0;
         // move 7
         animation: appear-3 var(--move-7) calc(var(--until-7) + var(--delay-7)) forwards;
+    }
+ 
+    @include v.media(v.$tablet) {
+        --scale: .6px;
+    }
+    @include v.media(v.$mobile) {
+        .banner {display: none;}
+        .text2 {
+            --scale: .5px;
+        }
     }
 }
