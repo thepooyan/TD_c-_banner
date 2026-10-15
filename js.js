@@ -19,7 +19,7 @@ if (attention_banner) {
     }
 
     window.r = repeatAnimation
-    // setInterval(() => {
-    //     repeatAnimation()
-    // }, animationDuration + animationDelay);
+    setInterval(() => {
+        repeatAnimation()
+    }, animationDuration + animationDelay);
 }
