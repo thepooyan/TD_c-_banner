@@ -11,38 +11,38 @@
     overflow: hidden;
     position: relative;
 
-    --delay-1: .7s;
-    --move-1: 2s;
+    --delay-1: .4s;
+    --move-1: 1.3s;
 
     --until-2: calc(var(--delay-1) + var(--move-1));
 
     --delay-2: 0s;
-    --move-2: .7s;
+    --move-2: .4s;
 
     --until-3: calc(var(--delay-2) + var(--move-2) + var(--until-2));
 
     --delay-3: 0s;
-    --move-3: .6s;
+    --move-3: .4s; //text
 
     --until-4: calc(var(--delay-3) + var(--move-3) + var(--until-3));
 
     --delay-4: 1s;
-    --move-4: .5s;
+    --move-4: .33s;
 
     --until-5: calc(var(--delay-4) + var(--move-4) + var(--until-4));
 
     --delay-5: 0s;
-    --move-5: 1.3s;
+    --move-5: .86s;
 
     --until-6: calc(var(--delay-5) + var(--move-5) + var(--until-5));
 
     --delay-6: 0s;
-    --move-6: 1s;
+    --move-6: .6s; //text
 
     --until-7: calc(var(--delay-6) + var(--move-6) + var(--until-6));
 
     --delay-7: 0s;
-    --move-7: 1s;
+    --move-7: .6s;
 
     --outer-left-bound: 210;
 

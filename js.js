@@ -1,8 +1,8 @@
 const attention_banner = document.querySelector("#c_sharp_ads");
 if (attention_banner) {
-    const animationDuration = 9000;
-    const animationDelay = 2000;
-    const repeatDelay = 500;
+    const animationDuration = 5900;
+    const animationDelay = 1000;
+    const repeatDelay = 100;
 
     const repeatAnimation = () => {
         attention_banner.querySelectorAll("*").forEach((el) => {
