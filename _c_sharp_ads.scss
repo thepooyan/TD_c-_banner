@@ -6,7 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-block: calc(1.5 * var(--scale));
     overflow: hidden;
     position: relative;
 
@@ -21,12 +20,12 @@
     --until-3: calc(var(--delay-2) + var(--move-2) + var(--until-2));
 
     --delay-3: 0s;
-    --move-3: 1s;
+    --move-3: .6s;
 
     --until-4: calc(var(--delay-3) + var(--move-3) + var(--until-3));
 
     --delay-4: 1s;
-    --move-4: 1s;
+    --move-4: .5s;
 
     --until-5: calc(var(--delay-4) + var(--move-4) + var(--until-4));
 
@@ -95,9 +94,11 @@
     }
     @keyframes appear {
         0% {
+            translate: 0 calc(5 * var(--scale));
             opacity: 0;
         }
         100% {
+            translate: 0 0;
             opacity: 1;
         }
 
@@ -138,9 +139,21 @@
     }    
     @keyframes appear-2 {
         0% {
+            rotate: 5deg;
             opacity: 0;
         }
         100% {
+            rotate: 0;
+            opacity: 1;
+        }
+    }  
+    @keyframes appear-3 {
+        0% {
+            filter: blur(3px);
+            opacity: 0;
+        }
+        100% {
+            filter: blur(0px);
             opacity: 1;
         }
     }
@@ -177,6 +190,6 @@
         translate: calc(279 * var(--scale)) 0;
         opacity: 0;
         // move 7
-        animation: appear var(--move-7) calc(var(--until-7) + var(--delay-7)) forwards;
+        animation: appear-3 var(--move-7) calc(var(--until-7) + var(--delay-7)) forwards;
     }
 }
