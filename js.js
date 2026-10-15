@@ -1,6 +1,3 @@
-
-
-
 const attention_banner = document.querySelector("#c_sharp_ads");
 if (attention_banner) {
     const animationDuration = 9000;
