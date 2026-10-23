@@ -1,10 +1,16 @@
 @use "./Content/source/Variables" as v;
 
 #c_sharp_ads {
-    --purple1: #6411BC;
-    --purple2: #A047FF;
+    --color1: #6411BC;
+    --color2: #A047FF;
+
+    &.llm {
+        --color1: green;
+        --color2: rgb(9, 156, 9);
+    }
+
     --scale: 1px;
-    background: linear-gradient(to left, var(--purple1), var(--purple2));
+    background: linear-gradient(to left, var(--color1), var(--color2));
     display: flex;
     justify-content: center;
     align-items: center;
