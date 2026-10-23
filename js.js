@@ -38,25 +38,24 @@ if (attention_banner) {
         attention_banner.className = banner.classname
     }
 
-    const repeatAnimation = () => {
+    const disableAnimations = () => {
         attention_banner.querySelectorAll("*").forEach((el) => {
             el.style.animation = "none";
         });
-        setTimeout(() => {
-            attention_banner.querySelectorAll("*").forEach((el) => {
-                el.style.animation = "";
-            });
-        }, repeatDelay)
+    }
+    const enableAnimations = () => {
+        attention_banner.querySelectorAll("*").forEach((el) => {
+            el.style.animation = "";
+        });
     }
 
-    window.r = repeatAnimation
     setInterval(() => {
-
-        if (is_llm) applyBanner(c_sharp_banner)
-        else applyBanner(llm_banner)
-
-        is_llm = !is_llm
-
-        repeatAnimation()
+        let new_banner = is_llm ? c_sharp_banner : llm_banner;
+        disableAnimations()
+        applyBanner(new_banner)
+        setTimeout(() => {
+            enableAnimations()
+        }, repeatDelay)
+        is_llm = !is_llm;
     }, animationDuration + animationDelay);
 }
