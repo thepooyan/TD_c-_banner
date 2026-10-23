@@ -49,15 +49,13 @@ if (attention_banner) {
         }, repeatDelay)
     }
 
-    applyBanner(llm_banner)
-
     window.r = repeatAnimation
     setInterval(() => {
 
-        // if (is_llm) applyBanner(c_sharp_banner)
-        // else applyBanner(llm_banner)
+        if (is_llm) applyBanner(c_sharp_banner)
+        else applyBanner(llm_banner)
 
-        // is_llm = !is_llm
+        is_llm = !is_llm
 
         repeatAnimation()
     }, animationDuration + animationDelay);
