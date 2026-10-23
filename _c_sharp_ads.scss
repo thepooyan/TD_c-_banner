@@ -13,6 +13,11 @@
             top: calc(8 * var(--scale));
             height: calc(81 * var(--scale));
         }
+        @include v.media(v.$mobile) {
+            .effect1, .effect2 {
+                font-size: 50px;
+            }
+        }
     }
 
     --scale: 1px;
