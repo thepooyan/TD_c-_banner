@@ -13,7 +13,7 @@ if (attention_banner) {
     let is_llm = false
 
     const llm_banner = {
-        text1: "اولین دوره LLM",
+        text1: "مهارت های خاص AI، مزیت رقابتی تو",
         text2: "مهندسی LLM، RAG و هوش مصنوعی مولد",
         effect: "LLM",
         table: "https://tahlildadeh.com/Content/images/newBanner/left-brain.webp",
