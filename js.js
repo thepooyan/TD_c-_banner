@@ -20,13 +20,13 @@ if (attention_banner) {
         key: "https://tahlildadeh.com/Content/images/newBanner/right-brain.webp",
         classname: "llm"
     }
-    const c_sharp_banner = {
-        text1: "#C کلید ورود به بازار کار",
-        text2: "دوره پروژه‌محور #C و ASP.NET Core",
-        effect: "C#",
-        table: "https://tahlildadeh.com/Content/images/newBanner/c_table.webp",
-        key: "https://tahlildadeh.com/Content/images/newBanner/c_key.webp",
-        classname: ""
+    const default_banner = {
+        text1: text1.innerText,
+        text2: text2.innerText,
+        effect: effects[0].innerText,
+        table: table.src,
+        key: key.src,
+        classname: attention_banner.className
     }
 
     const applyBanner = banner => {
@@ -50,7 +50,7 @@ if (attention_banner) {
     }
 
     setInterval(() => {
-        let new_banner = is_llm ? c_sharp_banner : llm_banner;
+        let new_banner = is_llm ? default_banner : llm_banner;
         disableAnimations()
         applyBanner(new_banner)
         setTimeout(() => {
