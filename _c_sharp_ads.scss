@@ -5,8 +5,14 @@
     --color2: #A047FF;
 
     &.llm {
-        --color1: green;
-        --color2: rgb(9, 156, 9);
+        --color1: #0124B4;
+        --color2: #030F40;
+        --grow-amount: 43;
+
+        .key {
+            top: calc(8 * var(--scale));
+            height: calc(81 * var(--scale));
+        }
     }
 
     --scale: 1px;
@@ -16,6 +22,8 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+
+    --grow-amount: 119;
 
     --delay-1: .4s;
     --move-1: 1.3s;
@@ -153,7 +161,7 @@
             width: calc(0 * var(--scale));
         }
         100% {
-            width: calc(119 * var(--scale));
+            width: calc(var(--grow-amount) * var(--scale));
         }
     }    
     @keyframes go-left {
