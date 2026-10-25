@@ -18,7 +18,8 @@ if (attention_banner) {
         effect: "LLM",
         table: "https://tahlildadeh.com/Content/images/newBanner/left-brain.webp",
         key: "https://tahlildadeh.com/Content/images/newBanner/right-brain.webp",
-        classname: "llm"
+        classname: "llm",
+        link: "https://www.tahlildadeh.com/coursedetails/1220/llm-rag-generative-ai-course.aspx"
     }
     const default_banner = {
         text1: text1.innerText,
@@ -26,7 +27,8 @@ if (attention_banner) {
         effect: effects[0].innerText,
         table: table.src,
         key: key.src,
-        classname: attention_banner.className
+        classname: attention_banner.className,
+        link: attention_banner.href
     }
 
     const applyBanner = banner => {
@@ -36,6 +38,7 @@ if (attention_banner) {
         table.src = banner.table;
         key.src = banner.key;
         attention_banner.className = banner.classname
+        attention_banner.href = banner.link
     }
 
     const disableAnimations = () => {
